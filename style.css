@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-Regular.otf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  padding: 0 4vw;
+}
+
+header {
+  margin: 0 -4vw;
+  padding: 0 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  border-bottom: #023047 solid;
+}
+header nav {
+  height: 100%;
+}
+header nav button {
+  font-family: "Inter", serif;
+  font-size: x-large;
+  color: #023047;
+  padding: 0 1vw;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  background-color: white;
+}
+header nav button:hover {
+  background-color: #f2f2f2;
+}
+header span {
+  font-family: "Inter", serif;
+  font-size: x-large;
+  color: #023047;
+  color: #fb8500;
+}
+
+main {
+  padding: 2vh 0;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+main button {
+  border-radius: 6px;
+  border: solid #2962ff;
+  background-color: #2962ff;
+  color: white;
+  cursor: pointer;
+  height: 4vh;
+  transition: 0.4s;
+}
+main button:hover {
+  color: #2962ff;
+  background-color: white;
+}
+
+aside {
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  border-right: #023047 solid;
+}
+aside .searchbar {
+  display: flex;
+  justify-content: space-between;
+}
+aside .searchbar textarea {
+  width: 18vw;
+  height: 4vh;
+  padding: 0.5vw;
+  font-size: 0.9rem;
+  resize: none;
+}
+aside .searchbar button {
+  padding: 2%;
+}
+aside .sorting {
+  margin: 2.5vh 0;
+  padding: 2.5vh 0;
+  border-top: #023047 solid;
+  border-bottom: #023047 solid;
+}
+aside .sorting ul {
+  list-style: none;
+  font-size: x-large;
+}
+aside .sorting li {
+  margin: 1vh 0;
+  font-size: large;
+}
+
+#totalPrice {
+  font-size: 1.5vw;
+  margin: 1vh;
+  text-align: center;
+}
+
+#catalogue {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 30vh;
+  width: 70%;
+  gap: 2vh 2vw;
+  padding-left: 2vw;
+  height: 100%;
+  overflow-y: scroll;
+}
+#catalogue article {
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background: linear-gradient(#67C3F3, #5A98F2);
+  color: white;
+}
+#catalogue .articlePrice {
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */
