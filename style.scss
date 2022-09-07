@@ -1,0 +1,150 @@
+$ocean-blue: #2962ff;
+$dark-blue: #023047;
+
+@mixin header-set {
+  font-family: 'Inter', serif;
+  font-size: x-large;
+  color: $dark-blue;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("assets/fonts/Inter-Regular.otf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', serif;
+}
+
+body {
+  padding: 0 4vw;
+}
+
+header {
+  margin: 0 -4vw;
+  padding: 0 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  border-bottom: $dark-blue solid;
+
+  nav {
+    height: 100%;
+
+    button {
+      @include header-set;
+      padding: 0 1vw;
+      border: none;
+      height: 100%;
+      cursor: pointer;
+      background-color: white;
+      &:hover {
+        background-color: darken(white, 5%);
+      }
+    }
+  }
+
+  span {
+    @include header-set;
+    color: #fb8500;
+  }
+}
+
+main {
+  padding: 2vh 0;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    border-radius: 6px;
+    border: solid $ocean-blue;
+    background-color: $ocean-blue;
+    color: white;
+    cursor: pointer;
+    height: 4vh;
+    transition: 0.4s;
+    &:hover {
+      color: $ocean-blue;
+      background-color: white;
+    }
+  }
+}
+
+aside {
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  border-right: $dark-blue solid;
+
+  .searchbar {
+    display: flex;
+    justify-content: space-between;
+
+    textarea {
+      width: 18vw;
+      height: 4vh;
+      padding: 0.5vw;
+      font-size: 0.9rem;
+      resize: none;
+    }
+
+    button {
+      padding: 2%;
+    }
+  }
+
+  .sorting {
+    margin: 2.5vh 0;
+    padding: 2.5vh 0;
+    border-top: $dark-blue solid; border-bottom: $dark-blue solid;
+
+    ul {
+      list-style: none;
+      font-size: x-large;
+    }
+
+    li {
+      margin: 1vh 0;
+      font-size: large;
+    }
+  }
+}
+
+#totalPrice {
+  font-size: 1.5vw;
+  margin: 1vh;
+  text-align: center;
+}
+
+#catalogue {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 30vh;
+  width: 70%;
+  gap: 2vh 2vw;
+  padding-left: 2vw;
+  height: 100%;
+  overflow-y: scroll;
+
+  article {
+    padding: 1vh 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    background: linear-gradient(#67C3F3, #5A98F2);
+    color: white;
+  }
+
+  .articlePrice {
+    align-self: flex-end;
+  }
+}
