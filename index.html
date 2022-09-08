@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sheet music</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Artpub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/images/article.png" type="image/x-icon">
+    <script src="scripts/list.js"></script>
 </head>
-<body>
-
+<body onload="getListOfItems()" class="index">
+<header>
+    <nav>
+        <button><a href="index.html">Articles</a></button>
+        <button><a href="publish.html">Publish</a></button>
+    </nav>
+    <span>Artpub</span>
+</header>
+<main>
+    <aside>
+        <div class="searchbar">
+            <label for="search">
+                <textarea id="search" cols=25" rows="1" placeholder="Enter an article name..."></textarea>
+            </label>
+            <button onclick="getListOfItems(searchByArticleName)">Search</button>
+        </div>
+        <div class="sorting">
+            <ul>Sort by
+                <li><label><input type="radio" name="sortRadio" checked="checked" id="byDate" onclick="getListOfItems()"> publish
+                    date</label></li>
+                <li><label><input type="radio" name="sortRadio" id="byAuthor" onclick="getListOfItems()"> author</label>
+                </li>
+                <li><label><input type="radio" name="sortRadio" id="byPrice" onclick="getListOfItems()"> price</label>
+                </li>
+            </ul>
+        </div>
+        <button onclick="calculateTotalPrice()">Calculate your catalogue total price</button>
+        <p id="totalPrice"></p>
+    </aside>
+    <section id="catalogue"></section>
+</main>
 </body>
 </html>

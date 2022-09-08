@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtPub</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/images/article.png" type="image/x-icon">
+    <script src="scripts/postAndPut.js"></script>
+</head>
+<body class="publishEdit">
+<header>
+    <nav>
+        <button><a href="index.html">Articles</a></button>
+        <button><a href="publish.html">Publish</a></button>
+    </nav>
+    <span>Artpub</span>
+</header>
+<main>
+    <h1>Publish an article</h1>
+    <form action="publish.html">
+        <div>
+            <label for="articleTitle">Title</label>
+            <textarea id="articleTitle" placeholder="Article title..."></textarea>
+        </div>
+        <div>
+            <label for="articleAuthor">Author</label>
+            <textarea id="articleAuthor" placeholder="Article author..."></textarea>
+        </div>
+        <div>
+            <label for="articlePrice">Price ($)</label>
+            <textarea id="articlePrice" placeholder="Article price..."></textarea>
+        </div>
+        <input type="submit" value="Submit" onclick="createArticle()">
+    </form>
+</main>
+</body>
+</html>
