@@ -1,18 +1,12 @@
-class Article {
-    constructor(json) {
-        Object.assign(this, json);
-    }
-}
-
 function calculateTotalPrice() {
     let totalPrice = 0;
-    document.querySelectorAll(".articlePrice").forEach(function (priceValue) {
+    document.querySelectorAll(".articlePrice").forEach((priceValue) => {
         totalPrice += parseInt(priceValue.innerHTML.slice(1));
     });
     document.querySelector("#totalPrice").innerHTML = "Total price: $" + totalPrice;
 }
 
-function appendArticle(object, propertyName, container) {
+function appendProperty(object, propertyName, container) {
     let tag = document.createElement("p");
     if (propertyName === "price") {
         tag.innerHTML += '$';
@@ -22,9 +16,33 @@ function appendArticle(object, propertyName, container) {
     container.appendChild(tag);
 }
 
+function redirectToEdit(id, tag) {
+    localStorage.clear();
+    localStorage.setItem('id', id)
+    window.location.replace("/web-js-labs/edit.html");
+}
+
+// EDIT NOT WORKING
+function createArticles(articles) {
+    articles.forEach((article) => {
+        let articleTag = document.createElement("article");
+        document.querySelector("#catalogue").appendChild(articleTag);
+        Object.getOwnPropertyNames(article).forEach((property) => {
+            appendProperty(article, property, articleTag);
+            articleTag.innerHTML += `
+    <button class="articleDelete" onclick="deleteArticle(${article.id})">Delete</button>
+    <button class="articleEdit" onclick="redirectToEdit(${article.id})">Edit</button>
+    `
+        });
+    });
+
+}
+
 function sortByProperty(articleList, property) {
-    articleList.sort(function (a, b) {
-        if (a[property] > b[property]) return 1; else if (a[property] < b[property]) return -1; else return 0;
+    articleList.sort((a, b) => {
+        if (a[property] > b[property]) return 1;
+        else if (a[property] < b[property]) return -1;
+        else return 0;
     });
 }
 
@@ -53,14 +71,15 @@ async function getListOfItems(searchFunction) {
             articles = searchFunction(articles, document.querySelector("#search").value);
         }
         sortArticles(articles);
-
-        articles.forEach(function (articleObj) {
-            let article = new Article(articleObj);
-            let articleTag = document.createElement("article");
-            document.querySelector("#catalogue").appendChild(articleTag);
-            Object.getOwnPropertyNames(article).forEach(function (property) {
-                if (property !== "id") appendArticle(article, property, articleTag);
-            });
-        });
+        createArticles(articles);
     }
+}
+
+async function deleteArticle(id) {
+    const sortOption = document.querySelector('input[name="sortRadio"]:checked').id;
+    await fetch("http://127.0.0.1:8000/articles/" + id, {
+        method: "DELETE"
+    });
+    await getListOfItems();
+    document.querySelector(`#${sortOption}`).checked = true;
 }

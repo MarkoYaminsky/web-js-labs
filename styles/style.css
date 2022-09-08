@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Regular.otf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  padding: 0 4vw;
+}
+
+header {
+  background: linear-gradient(#67C3F3, #5A98F2);
+  margin: 0 -4vw;
+  padding: 0 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  border-bottom: #023047 solid;
+}
+header nav {
+  height: 100%;
+}
+header nav button {
+  font-family: "Inter", serif;
+  font-size: x-large;
+  color: #023047;
+  padding: 0 1vw;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+header nav button a {
+  text-decoration: none;
+  color: white;
+}
+header nav button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+header span {
+  font-family: "Inter", serif;
+  font-size: x-large;
+  color: #023047;
+  color: white;
+}
+
+.index main {
+  padding: 2vh 0;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.index main button {
+  border-radius: 6px;
+  border: solid #2962ff;
+  background-color: #2962ff;
+  color: white;
+  cursor: pointer;
+  height: 4vh;
+  transition: 0.4s;
+}
+.index main button:hover {
+  color: #2962ff;
+  background-color: white;
+}
+.index aside {
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  border-right: #023047 solid;
+}
+.index aside .searchbar {
+  display: flex;
+  justify-content: space-between;
+}
+.index aside .searchbar textarea {
+  width: 18vw;
+  height: 4vh;
+  padding: 0.5vw;
+  font-size: 0.9rem;
+  resize: none;
+}
+.index aside .searchbar button {
+  padding: 2%;
+}
+.index aside .sorting {
+  margin: 2.5vh 0;
+  padding: 2.5vh 0;
+  border-top: #023047 solid;
+  border-bottom: #023047 solid;
+}
+.index aside .sorting ul {
+  list-style: none;
+  font-size: x-large;
+}
+.index aside .sorting li {
+  margin: 1vh 0;
+  font-size: large;
+}
+.index #totalPrice {
+  font-size: 1.5vw;
+  margin: 1vh;
+  text-align: center;
+}
+.index #catalogue {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 30vh;
+  width: 70%;
+  gap: 2vh 2vw;
+  padding-left: 2vw;
+  height: 100%;
+  overflow-y: scroll;
+}
+.index #catalogue article {
+  position: relative;
+  padding: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background: linear-gradient(#67C3F3, #5A98F2);
+  color: white;
+}
+.index #catalogue button {
+  width: 3vw;
+  font-size: 0.7vw;
+}
+.index .articleDelete {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  background-color: #f51a1a;
+  border: #f51a1a solid;
+}
+.index .articleDelete:hover {
+  color: #f51a1a;
+  background-color: white;
+}
+.index .articleEdit {
+  position: absolute;
+  top: 1vh;
+  left: 4.5vw;
+  background-color: #2962ff;
+  border: #2962ff solid;
+}
+.index .articleEdit:hover {
+  color: #2962ff;
+  background-color: white;
+}
+.index .articlePrice {
+  align-self: flex-end;
+  font-size: 2vw;
+}
+.index .articleId {
+  display: none;
+}
+
+.publishEdit main {
+  margin: 0 -4vw;
+  padding: 6vh 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+.publishEdit h1 {
+  font-size: 3vw;
+  margin-bottom: 12vh;
+}
+.publishEdit form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55%;
+  width: 35%;
+  font-size: 1.2vw;
+}
+.publishEdit form div {
+  display: flex;
+  flex-direction: column;
+}
+.publishEdit form label {
+  margin-bottom: 0.5vh;
+}
+.publishEdit form textarea {
+  height: 2em;
+  padding: 0.5vw;
+  border-radius: 6px;
+  font-size: 1.5vw;
+  resize: none;
+}
+.publishEdit form input {
+  position: relative;
+  top: 12vh;
+  width: 50%;
+  height: 6.5vh;
+  align-self: center;
+  border-radius: 10px;
+  border: solid #2962ff;
+  background-color: #2962ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  font-size: 1.2vw;
+}
+.publishEdit form input:hover {
+  color: #2962ff;
+  background-color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

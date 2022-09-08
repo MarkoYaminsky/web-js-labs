@@ -1,0 +1,54 @@
+.publishEdit main {
+  margin: 0 -4vw;
+  padding: 6vh 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+.publishEdit h1 {
+  font-size: 3vw;
+  margin-bottom: 12vh;
+}
+.publishEdit form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55%;
+  width: 35%;
+  font-size: 1.2vw;
+}
+.publishEdit form div {
+  display: flex;
+  flex-direction: column;
+}
+.publishEdit form label {
+  margin-bottom: 0.5vh;
+}
+.publishEdit form textarea {
+  height: 2em;
+  padding: 0.5vw;
+  border-radius: 6px;
+  font-size: 1.5vw;
+  resize: none;
+}
+.publishEdit form input {
+  position: relative;
+  top: 12vh;
+  width: 50%;
+  height: 6.5vh;
+  align-self: center;
+  border-radius: 10px;
+  border: solid #2962ff;
+  background-color: #2962ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  font-size: 1.2vw;
+}
+.publishEdit form input:hover {
+  color: #2962ff;
+  background-color: white;
+}
+
+/*# sourceMappingURL=publishEdit.css.map */

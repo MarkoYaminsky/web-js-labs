@@ -1,0 +1,64 @@
+$ocean-blue: #2962ff;
+
+.publishEdit {
+
+  main {
+    margin: 0 -4vw;
+    padding: 6vh 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+  }
+
+  h1 {
+    font-size: 3vw;
+    margin-bottom: 12vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 55%;
+    width: 35%;
+    font-size: 1.2vw;
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.5vh;
+    }
+
+    textarea {
+      height: 2em;
+      padding: 0.5vw;
+      border-radius: 6px;
+      font-size: 1.5vw;
+      resize: none;
+    }
+
+    input {
+      position: relative;
+      top: 12vh;
+      width: 50%;
+      height: 6.5vh;
+      align-self: center;
+      border-radius: 10px;
+      border: solid $ocean-blue;
+      background-color: $ocean-blue;
+      color: white;
+      cursor: pointer;
+      transition: 0.4s;
+      font-size: 1.2vw;
+
+      &:hover {
+        color: $ocean-blue;
+        background-color: white;
+      }
+    }
+  }
+}

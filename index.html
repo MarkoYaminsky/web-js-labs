@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Artpub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="assets/images/article.png" type="image/x-icon">
-    <script src="scripts.js"></script>
+    <script src="scripts/list.js"></script>
 </head>
-<body onload="getListOfItems()">
+<body onload="getListOfItems()" class="index">
 <header>
     <nav>
-        <button>My articles</button>
-        <button>Publish</button>
-        <button>Edit</button>
+        <button><a href="index.html">Articles</a></button>
+        <button><a href="publish.html">Publish</a></button>
     </nav>
     <span>Artpub</span>
 </header>
 <main>
     <aside>
         <div class="searchbar">
-            <label>
+            <label for="search">
                 <textarea id="search" cols=25" rows="1" placeholder="Enter an article name..."></textarea>
             </label>
             <button onclick="getListOfItems(searchByArticleName)">Search</button>
